@@ -1,46 +1,68 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "lists.h"
 
 /**
- * delete_nodeint_at_index - deletes node at index
- * @head: pointer
- * @idx: index of node to delete
+ * main - check the code
  *
- * Return: 1 on succes
+ * Return: Always 0.
  */
-int delete_nodeint_at_index(listint_t **head, unsigned int idx)
+int main(void)
 {
-	listint_t *current, *previous;
-	unsigned int k;
+    listint_t *head;
 
-	if (head == NULL || *head == NULL)
-		return (-1);
-
-	current = *head;
-
-	if (idx == 0)
-	{
-		*head = current->next;
-		free(current);
-		return (1);
-
-	}
-
-	previous = NULL;
-	for (k = 0; k < idx; k++)
-	{
-		if (current == NULL)
-			return (-1);
-
-		previous = current;
-		current = current->next;
-	}
-
-	if (previous != NULL)
-		previous->next = current->next;
-	else
-		*head = current->next;
-
-	free(current);
-
-	return (1);
+    head = NULL;
+    add_nodeint_end(&head, 0);
+    add_nodeint_end(&head, 1);
+    add_nodeint_end(&head, 2);
+    add_nodeint_end(&head, 3);
+    add_nodeint_end(&head, 4);
+    add_nodeint_end(&head, 98);
+    add_nodeint_end(&head, 402);
+    add_nodeint_end(&head, 1024);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 5);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    printf("-----------------\n");
+    delete_nodeint_at_index(&head, 0);
+    print_listint(head);
+    return (0);
 }
